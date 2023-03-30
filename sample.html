@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>チェックリスト</title>
+  <style>
+    label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+  <form>
+    <label><input type="radio" name="list" value="item1">項目1</label>
+    <label><input type="radio" name="list" value="item2">項目2</label>
+    <label><input type="radio" name="list" value="item3">項目3</label>
+  </form>
+  <script>
+    const items = document.querySelectorAll('input[name="list"]');
+    items.forEach(item => {
+      item.addEventListener('change', () => {
+        if (item.checked) {
+          alert(`選択された項目：${item.value}`);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
